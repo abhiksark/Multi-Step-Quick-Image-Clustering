@@ -1,29 +1,13 @@
-import argparse
 import glob
-import os
-import shutil
-from shutil import copy, move
 
-import cv2
-import faiss
 import numpy as np
-import pandas as pd
 import PIL.Image as Image
-import torch
-import torch.nn as nn
-import torchvision
 import torchvision.datasets as datasets
-import torchvision.models as models
-import tqdm
-from PIL import Image as Image
+# from PIL import Image as Image
 from skimage import io
-from torch.autograd import Variable
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import Dataset
 from torchvision import transforms as trans
-from torchvision.datasets import ImageFolder
 
-torch.backends.cudnn.benchmark = True
-torch.backends.cudnn.enabled = True
 
 class ClusterDataset(Dataset,):
     def __init__(self,
